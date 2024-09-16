@@ -1,7 +1,6 @@
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
-from constants import MAIN_PAGE_URL
 from helpers import register_new_user_and_return_data
 from locators.locators_login_page import RECOVER_PASSWORD, CONSTRUCTOR_BUTTON, FEED_BUTTON, INPUT_EMAIL, INPUT_PASSWORD, \
     LOGIN_BUTTON

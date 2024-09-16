@@ -35,7 +35,7 @@ def register_new_user_and_return_data():
     payload = generate_random_user_data()
 
     # отправляем запрос на регистрацию пользователя и сохраняем ответ в переменную response
-    response = requests.post(MAIN_PAGE_URL + REGISTER_API_URL, data=payload)
+    response = requests.post(REGISTER_API_URL, data=payload)
 
     if response.status_code == 200 and response.json()['success'] is True:
         # если регистрация прошла успешно
@@ -47,7 +47,7 @@ def register_new_user_and_return_data():
 
 
 def get_random_ingredients():
-    response = requests.get(MAIN_PAGE_URL + INGREDIENTS_DATA_URL)
+    response = requests.get(INGREDIENTS_DATA_URL)
     data = response.json()["data"]
 
     # Фильтрация ингредиентов по типу
@@ -70,5 +70,5 @@ def create_random_order(access_token):
     headers = {
         'Authorization': access_token
     }
-    response = requests.post(MAIN_PAGE_URL + CREATE_ORDER_URL, data=payload, headers=headers)
+    response = requests.post(CREATE_ORDER_URL, data=payload, headers=headers)
     return response.json()

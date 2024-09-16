@@ -1,6 +1,3 @@
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.wait import WebDriverWait
-
 from locators.locators_feed_page import ORDER_ITEM, ORDER_DETAILS_POPUP, ORDER_ITEM_LIST, ORDER_COUNTER_ALL_TIME, \
     ORDER_COUNTER_TODAY, ORDER_IN_PROGRESS
 from pages.base_page import BasePage

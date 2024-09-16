@@ -3,6 +3,7 @@ import allure
 from conftest import *
 from helpers import register_new_user_and_return_data, create_random_order
 
+
 @allure.title("Лента заказов")
 class TestOrderFeed:
     @allure.step("Нажать на заказ, проверить, что появилось всплывающее окно с деталями заказа")

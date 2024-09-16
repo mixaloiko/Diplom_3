@@ -8,7 +8,7 @@ class ResetPasswordPage(BasePage):
         self.hide_overlay()
         self.click_on_element(SHOW_PASSWORD_BUTTON)
 
-    def check_password_field_active(self):
+    def is_password_field_active(self):
         element = self.find_element_with_wait(PASSWORD_INPUT_FIELD)
 
         # Получаем значение атрибута 'class'

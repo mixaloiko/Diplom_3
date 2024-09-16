@@ -11,7 +11,7 @@ class TestOrderFeed:
         feed_page.load()
         feed_page.hide_overlay()
         feed_page.open_order_item()
-        assert feed_page.check_order_details_popup_opened()
+        assert feed_page.is_order_details_popup_opened()
 
     @allure.step("Создать заказ, войти в личный кабинет, нажать на историю заказов, проверить, что созданный заказ есть в ленте заказов")
     def test_order_from_history_displayed_on_feed_page(self, login_page, main_page, profile_page, feed_page, order_history_page):
@@ -24,7 +24,7 @@ class TestOrderFeed:
         profile_page.click_order_history_button()
         history_order_id = order_history_page.get_order_id()
         order_history_page.find_and_click_feed_button()
-        assert feed_page.check_order_id_is_present(history_order_id)
+        assert feed_page.is_order_id_present(history_order_id)
 
     @allure.step("Создать заказ, сравнить, что счетчик заказов за все время изменился")
     def test_order_counter_all_time_change(self, feed_page):

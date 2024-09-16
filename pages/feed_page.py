@@ -7,11 +7,11 @@ class FeedPage(BasePage):
     def open_order_item(self):
         self.click_on_element(ORDER_ITEM)
 
-    def check_order_details_popup_opened(self):
+    def is_order_details_popup_opened(self):
         details_popup = self.find_element_with_wait(ORDER_DETAILS_POPUP)
         return details_popup.is_displayed()
 
-    def check_order_id_is_present(self, order_id):
+    def is_order_id_present(self, order_id):
         elements_list = self.find_element_with_wait(ORDER_ITEM_LIST)
         return order_id in elements_list.text
 

@@ -18,7 +18,7 @@ class BasePage:
         action_chains = ActionChains(self.driver)
         action_chains.pause(seconds).perform()
 
-    def check_page_opened(self):
+    def is_page_opened(self):
         # ожидание загрузки страницы
         WebDriverWait(self.driver, 5).until(expected_conditions.url_contains(self.url))
         # проверить, что произошел переход на страницу сброса пароля

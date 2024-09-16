@@ -9,7 +9,7 @@ class MainPage(BasePage):
     def find_and_click_ingredient(self):
         self.click_on_element(INGREDIENT_BUN)
 
-    def check_pop_up_with_detail_ingredient(self):
+    def is_pop_up_with_detail_ingredient_visible(self):
         # ожидание загрузки страницы
         WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(INGREDIENT_POPUP_TITLE))
         title_element_text = self.get_text_from_element(INGREDIENT_POPUP_TITLE)

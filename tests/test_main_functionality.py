@@ -10,21 +10,21 @@ class TestMainFunctionality:
         login_page.load()
         login_page.hide_overlay()
         login_page.find_and_click_constructor_button()
-        assert main_page.check_page_opened()
+        assert main_page.is_page_opened()
 
     @allure.step("Найти и нажать на кнопку Лента заказов")
     def test_feed_opened(self, login_page, feed_page):
         login_page.load()
         login_page.hide_overlay()
         login_page.find_and_click_feed_button()
-        assert feed_page.check_page_opened()
+        assert feed_page.is_page_opened()
 
     @allure.step("Найти и нажать на ингредиент, проверить, что появился поп-ап с деталями ингредиента")
     def test_popup_with_details_ingredient_opened(self, main_page):
         main_page.load()
         main_page.hide_overlay()
         main_page.find_and_click_ingredient()
-        assert main_page.check_pop_up_with_detail_ingredient()
+        assert main_page.is_pop_up_with_detail_ingredient_visible()
 
     @allure.step("Нажать на ингредиент, нажать на крестик на поп-апе ингредиента, проверить, что поп-ап закрылся")
     def test_popup_with_details_ingredient_closed(self, main_page):

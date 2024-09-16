@@ -34,10 +34,3 @@ class LoginPage(BasePage):
 
     def find_and_click_feed_button(self):
         self.click_on_element(FEED_BUTTON)
-
-    def check_feed_page_opened(self):
-        # ожидание загрузки страницы
-        WebDriverWait(self.driver, 5).until(expected_conditions.url_contains('feed'))
-        # проверить, что произошел переход на страницу с заказами
-        current_url = self.driver.current_url
-        return 'feed' in current_url
